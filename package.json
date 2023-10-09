@@ -1,6 +1,6 @@
 {
   "name": "adex-linkedin-scrapper",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Flexible linkedin scrapper developed by Adefemigreat",
   "main": "index.js",
   "author": "Adefemigreat",
@@ -9,5 +9,6 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.12",
     "puppeteer": "^21.3.8"
-  }
+  },
+  "keywords": ["LinkedIn", "Scraping", "Web Scraping", "puppeteer", "cheerio", "Profile", "Data Extraction"]
 }
