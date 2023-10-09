@@ -13,17 +13,17 @@ declare class LinkedInScrapper {
         address: string;
         about: string;
     }>;
-    getExperiencePage(): Promise<{
+    getExperiences(): Promise<{
         position: string;
         company: string;
         duration: string;
         about: string;
     }[]>;
-    getEducationPage(): Promise<{
+    getEducations(): Promise<{
         schoolName: string;
         degreeField: string;
         duration: string;
     }[]>;
-    getSkillPage(): Promise<string[]>;
+    getSkills(): Promise<string[]>;
 }
 export default LinkedInScrapper;

@@ -118,7 +118,7 @@ var LinkedInScrapper = /** @class */ (function () {
             });
         });
     };
-    LinkedInScrapper.prototype.getExperiencePage = function () {
+    LinkedInScrapper.prototype.getExperiences = function () {
         return __awaiter(this, void 0, void 0, function () {
             var _a, page, browser, pageContent, $, experiences;
             return __generator(this, function (_b) {
@@ -181,7 +181,7 @@ var LinkedInScrapper = /** @class */ (function () {
             });
         });
     };
-    LinkedInScrapper.prototype.getEducationPage = function () {
+    LinkedInScrapper.prototype.getEducations = function () {
         return __awaiter(this, void 0, void 0, function () {
             var _a, page, browser, pageContent, $, educations;
             return __generator(this, function (_b) {
@@ -237,7 +237,7 @@ var LinkedInScrapper = /** @class */ (function () {
             });
         });
     };
-    LinkedInScrapper.prototype.getSkillPage = function () {
+    LinkedInScrapper.prototype.getSkills = function () {
         return __awaiter(this, void 0, void 0, function () {
             var _a, page, browser, pageContent, $, skills;
             return __generator(this, function (_b) {
