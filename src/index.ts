@@ -60,7 +60,7 @@ class LinkedInScrapper {
     };
   }
 
-  async getExperiencePage() {
+  async getExperiences() {
     await delay(1000);
     const { page, browser } = await this.getPageInfo();
     await page.goto(this.profileLink + "/details/experience");
@@ -122,7 +122,7 @@ class LinkedInScrapper {
     return experiences;
   }
 
-  async getEducationPage() {
+  async getEducations() {
     await delay(2000);
     const { page, browser } = await this.getPageInfo();
     await page.goto(this.profileLink + "/details/education");
@@ -173,7 +173,7 @@ class LinkedInScrapper {
     return educations;
   }
 
-  async getSkillPage() {
+  async getSkills() {
     await delay(3000);
     const { page, browser } = await this.getPageInfo();
     await page.goto(this.profileLink + "/details/skills");

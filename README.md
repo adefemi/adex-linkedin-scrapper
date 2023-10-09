@@ -52,7 +52,7 @@ This will return an object with name, heading, address, and about.
 To get employment history:
 
 ```
-const experiences = await scrapper.getExperiencePage();
+const experiences = await scrapper.getExperiences();
 ```
 
 ### Get Education Information
@@ -60,7 +60,7 @@ const experiences = await scrapper.getExperiencePage();
 To get educational background:
 
 ```
-const educations = await scrapper.getEducationPage();
+const educations = await scrapper.getEducations();
 ```
 
 ### Get Skill Information
@@ -68,7 +68,7 @@ const educations = await scrapper.getEducationPage();
 To get the list of skills:
 
 ```
-const skills = await scrapper.getSkillPage();
+const skills = await scrapper.getSkills();
 ```
 
 ### Contribute
