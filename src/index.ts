@@ -8,11 +8,13 @@ const upload = multer();
 
 app.use(upload.none());
 
-app.post("/profile-info", async (req, res) => {
+app.post("/api", async (req, res) => {
   const { cookie, profileLink } = req.body;
   if(!cookie || !profileLink) {
     return res.status(400).json({ error: "Missing cookie or profile link" });
   }
+  res.setHeader('Content-Type', 'text/html');
+  res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
   const scrapper = new LinkedInScrapper(cookie, profileLink);
   try {
     const [basicInfo, experiences, educations, skills] = await Promise.all([
