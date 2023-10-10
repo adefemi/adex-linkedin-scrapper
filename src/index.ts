@@ -3,6 +3,28 @@ import { load } from "cheerio";
 
 export const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
 
+type ProfileInfo = {
+  name: string;
+  heading: string;
+  address: string;
+  about: string;
+};
+
+type Experience = {
+  position: string;
+  company: string;
+  duration: string;
+  about: string;
+};
+
+type Education = {
+  schoolName: string;
+  degreeField: string;
+  duration: string;
+};
+
+type Skill = string;
+
 class LinkedInScrapper {
   private cookie: string;
   private profileLink: string;
@@ -12,7 +34,7 @@ class LinkedInScrapper {
     this.profileLink = profileLink;
   }
 
-  async getPageInfo() {
+  private async getPageInfo() {
     const browser = await puppeteer.launch({ headless: "new" });
     const page = await browser.newPage();
 
@@ -31,7 +53,7 @@ class LinkedInScrapper {
     };
   }
 
-  async getProfileInfo() {
+  async getProfileInfo():Promise<ProfileInfo> {
     const { page, browser } = await this.getPageInfo();
     await page.goto(this.profileLink);
     await page.waitForSelector("img", { timeout: 10000 });
@@ -60,7 +82,7 @@ class LinkedInScrapper {
     };
   }
 
-  async getExperiences() {
+  async getExperiences():Promise<Experience[]> {
     await delay(1000);
     const { page, browser } = await this.getPageInfo();
     await page.goto(this.profileLink + "/details/experience");
@@ -122,7 +144,7 @@ class LinkedInScrapper {
     return experiences;
   }
 
-  async getEducations() {
+  async getEducations():Promise<Education[]> {
     await delay(2000);
     const { page, browser } = await this.getPageInfo();
     await page.goto(this.profileLink + "/details/education");
@@ -173,7 +195,7 @@ class LinkedInScrapper {
     return educations;
   }
 
-  async getSkills() {
+  async getSkills():Promise<Skill[]> {
     await delay(3000);
     const { page, browser } = await this.getPageInfo();
     await page.goto(this.profileLink + "/details/skills");

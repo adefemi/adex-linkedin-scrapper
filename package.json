@@ -1,6 +1,6 @@
 {
   "name": "adex-linkedin-scrapper",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Flexible linkedin scrapper developed by Adefemigreat",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -11,5 +11,8 @@
     "cheerio": "^1.0.0-rc.12",
     "puppeteer": "^21.3.8"
   },
-  "keywords": ["LinkedIn", "Scraping", "Web Scraping", "puppeteer", "cheerio", "Profile", "Data Extraction"]
+  "keywords": ["LinkedIn", "Scraping", "Web Scraping", "puppeteer", "cheerio", "Profile", "Data Extraction"],
+  "scripts": {
+    "build": "tsc"
+  }
 }
