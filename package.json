@@ -8,11 +8,28 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
+    "body-parser": "^1.20.2",
     "cheerio": "^1.0.0-rc.12",
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1",
     "puppeteer": "^21.3.8"
   },
-  "keywords": ["LinkedIn", "Scraping", "Web Scraping", "puppeteer", "cheerio", "Profile", "Data Extraction"],
+  "keywords": [
+    "LinkedIn",
+    "Scraping",
+    "Web Scraping",
+    "puppeteer",
+    "cheerio",
+    "Profile",
+    "Data Extraction"
+  ],
   "scripts": {
-    "build": "tsc"
+    "clean:dist": "rm -rf dist && mkdir dist",
+    "build": "yarn clean:dist && tsc",
+    "start": "yarn build && node dist/index.js"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.18",
+    "@types/multer": "^1.4.8"
   }
 }
