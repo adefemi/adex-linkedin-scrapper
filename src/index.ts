@@ -1,5 +1,4 @@
-import puppeteer from "puppeteer-core";
-import chromium from "@sparticuz/chromium"
+import puppeteer from "puppeteer";
 import { load } from "cheerio";
 
 export const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
@@ -36,14 +35,7 @@ class LinkedInScrapper {
   }
 
   private async getPageInfo() {
-    const browser = await puppeteer.launch({ 
-      executablePath: await chromium.executablePath(),
-      headless: chromium.headless,
-      ignoreHTTPSErrors: true,
-      defaultViewport: chromium.defaultViewport,
-      args: [...chromium.args, "--hide-scrollbars", "--disable-web-security"],
-     });
-     
+    const browser = await puppeteer.launch({ headless: "new" });
     const page = await browser.newPage();
     page.setDefaultNavigationTimeout(0);
 
