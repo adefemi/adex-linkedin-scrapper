@@ -56,8 +56,8 @@ class LinkedInScrapper {
   async getProfileInfo(): Promise<ProfileInfo> {
     try {
       const { page, browser } = await this.getPageInfo();
-      await page.goto(this.profileLink);
-      await page.waitForSelector("img", { timeout: 10000 });
+      await page.goto(this.profileLink, { timeout: 0 });
+      await page.waitForSelector("img", { timeout: 0 });
       const pageContent = await page.content();
       await browser.close();
 
@@ -90,9 +90,9 @@ class LinkedInScrapper {
     await delay(1000);
     try {
       const { page, browser } = await this.getPageInfo();
-      await page.goto(this.profileLink + "/details/experience");
+      await page.goto(this.profileLink + "/details/experience", { timeout: 0 });
       await page.waitForSelector("h2.t-20.t-bold.ph3.pt3.pb2", {
-        timeout: 20000,
+        timeout: 0,
       });
       const pageContent = await page.content();
       await browser.close();
@@ -156,9 +156,9 @@ class LinkedInScrapper {
     await delay(2000);
     try {
       const { page, browser } = await this.getPageInfo();
-      await page.goto(this.profileLink + "/details/education");
+      await page.goto(this.profileLink + "/details/education", { timeout: 0 });
       await page.waitForSelector("h2.t-20.t-bold.ph3.pt3.pb2", {
-        timeout: 20000,
+        timeout: 0,
       });
       const pageContent = await page.content();
       await browser.close();
@@ -211,9 +211,9 @@ class LinkedInScrapper {
     await delay(3000);
     try {
       const { page, browser } = await this.getPageInfo();
-      await page.goto(this.profileLink + "/details/skills");
+      await page.goto(this.profileLink + "/details/skills", { timeout: 0 });
       await page.waitForSelector("h2.t-20.t-bold.ph3.pt3.pb2", {
-        timeout: 20000,
+        timeout: 0,
       });
       const pageContent = await page.content();
       await browser.close();
