@@ -1,6 +1,6 @@
 {
   "name": "adex-linkedin-scrapper",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Flexible linkedin scrapper developed by Adefemigreat",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
