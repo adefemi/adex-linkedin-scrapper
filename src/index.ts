@@ -35,7 +35,10 @@ class LinkedInScrapper {
   }
 
   private async getPageInfo() {
-    const browser = await puppeteer.launch({ headless: "new" });
+    const browser = await puppeteer.launch({
+      headless: "new",
+      args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    });
     const page = await browser.newPage();
     page.setDefaultNavigationTimeout(0);
 
@@ -51,7 +54,7 @@ class LinkedInScrapper {
     return {
       browser,
       page,
-    }
+    };
   }
 
   async getProfileInfo(): Promise<ProfileInfo> {
