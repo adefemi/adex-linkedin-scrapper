@@ -37,7 +37,13 @@ class LinkedInScrapper {
   private async getPageInfo() {
     const browser = await puppeteer.launch({
       headless: "new",
-      args: ["--no-sandbox", "--disable-setuid-sandbox"],
+      args: [
+        '--ignore-certificate-errors',
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+        '--disable-accelerated-2d-canvas',
+        '--disable-gpu'
+            ]
     });
     const page = await browser.newPage();
     page.setDefaultNavigationTimeout(0);
